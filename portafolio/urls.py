@@ -17,18 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
-from portafolio.views import contact
-from portafolio.views import projects
 from portafolio.views import resume
+from django.urls import re_path
+from django.views.static import serve
+from django.conf import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('resume/',resume),
+    path('accounts/',include('django.contrib.auth.urls')),
     #path('projects/',projects), 
     #path('contact/',contact), 
     path("", include('Aplicaciones.projectos.urls')),
     path("", include('Aplicaciones.contacto.urls')),  
+    path("", include('Aplicaciones.ubicaciones.urls')),  
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT})
     
 ]
 

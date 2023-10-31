@@ -1,0 +1,52 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<!-- Page Content-->
+<body class="d-flex flex-column h-100">
+<main class="flex-shrink-0">
+<div class="container px-5 my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Login</span></h1>
+    </div>
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-11 col-xl-9 col-xxl-8">
+
+            <div class="wrapper fadeInDown">
+                <form action="." method="post" id="Form"></form>
+                  <!-- Tabs Titles -->
+                  {% csrf_token %}
+                    <!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" required />
+                        <label for="email">Email address</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                    </div><!-- Email address input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="password" name="password" type="password" placeholder="123456" data-sb-validations="required,password" required />
+                        <label for="Passowrd">Password</label>
+                        <div class="invalid-feedback" data-sb-feedback="password:required">An Password is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="password:password">Password is not valid.</div>
+                    </div>
+                  <!-- Login Form -->
+                  
+                  <div class="d-grid"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
+              
+                  <!-- Remind Passowrd -->
+                  <div id="formFooter">
+                    <a class="underlineHover" href="#">Forgot Password?</a>
+                  </div>
+              
+                </form>
+            </div>     
+
+        </div>
+    </div>
+</div>
+</main>
+</body>
+
+{% endblock %}

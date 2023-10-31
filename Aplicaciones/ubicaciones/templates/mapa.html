@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block title %}Proyectito{% endblock %}
+
+{% block content %}
+
+<body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+        <section class="py-5">
+            <div class="container px-5 mb-5">
+                <h2>Mapa</h2>
+                {{ map|safe }}
+                <hr>
+                <ul>
+                    {% for loc in locations %}
+                        <li>{{ loc.name }} ( {{ loc.address }} )</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </section>
+    </main>
+</body>
+ 
+
+
+{% endblock %}
+
+
+
+
+
+
+

@@ -8,8 +8,14 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/resume">Resumen</a></li>
-                <li class="nav-item"><a class="nav-link" href="/projects">Projectos</a></li>
-                <li class="nav-item"><a class="nav-link" href="/contact">Contactos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'Proyectos' %}">Projectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contacto' %}">Contactos</a></li> 
+                <li class="nav-item"><a class="nav-link" href="{% url 'sitios' %}">Ubicaciones</a></li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'exit' %}">Salir</a></li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Log in</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
