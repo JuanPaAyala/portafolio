@@ -131,7 +131,14 @@ MEDIAFILES_ROOT = (os.path.join(BASE_DIR, 'media'), )
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#mktf anic gkfu qufv
+#dlmi vjic cmav vwvg
 
 LOGIN_REDIRECT_URL = 'inicio'
 LOGOUT_REDIRECT_URL = 'inicio'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'projecthouse2120@gmail.com'
+EMAIL_HOST_PASSWORD = 'dlmivjiccmavvwvg'
+EMAIL_USE_TLS = True
